@@ -3,10 +3,10 @@ import { Route, Routes } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import MainAdmin from "./pages/admin/MainAdmin";
 import MainUser from "./pages/user/MainUser";
-import Quis from "./pages/user/Quis";
+import Quis from "./pages/user/Quis/Quis";
 const App = () => {
   return (
-    <div className="App">
+    <div className="app">
       <>
         <Routes>
           <Route path="/" element={<MainUser />} />

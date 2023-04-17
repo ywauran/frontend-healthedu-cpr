@@ -289,7 +289,7 @@ const MainUser = () => {
         <section className="quiz">
           <h2 className="font-bold">Kuis</h2>
           <div>
-            <form>
+            <form className="flex flex-col space-y-4">
               <div>
                 <label htmlFor="" className="label__input">
                   Nama
@@ -329,7 +329,7 @@ const MainUser = () => {
               </div>
               <Link
                 to={`/quis/${name}/${age}/${gender}`}
-                className="button__primary mt-4 w-full"
+                className="button__primary mt-10 w-full text-center"
               >
                 submit
               </Link>
