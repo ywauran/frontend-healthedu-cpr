@@ -26,7 +26,10 @@ const MainAdmin = () => {
     },
   ];
   const [openModalLogout, setOpenModalLogout] = useState(false);
-  const Logout = () => {};
+  const Logout = () => {
+    sessionStorage.removeItem("Auth Token");
+    navigate("/login");
+  };
   useEffect(() => {
     let authToken = sessionStorage.getItem("Auth Token");
 

@@ -1,40 +1,47 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { app } from "../../../config";
+
+import { getDatabase, ref, onValue } from "firebase/database";
+
+const db = getDatabase(app);
 
 const DashboardPage = () => {
-  const data = [
-    {
-      name: "Yohanes Harke Wauran",
-      age: 21,
-      gender: 1,
-      wrong: 10,
-      correct: 10,
-      score: 50,
-    },
-    {
-      name: "Yohanes Harke Wauran",
-      age: 21,
-      gender: 1,
-      wrong: 10,
-      correct: 10,
-      score: 50,
-    },
-    {
-      name: "Yohanes Harke Wauran",
-      age: 21,
-      gender: 1,
-      wrong: 10,
-      correct: 10,
-      score: 50,
-    },
-  ];
+  const [data, setData] = useState([]);
+  const [countFemale, setCountFemale] = useState(0);
+  const [countMale, setCountMale] = useState(0);
+
+  const getData = () => {
+    const dbRef = ref(db, "result");
+    onValue(dbRef, (snapshot) => {
+      let data = [];
+      snapshot.forEach((childSnapshot) => {
+        let key = childSnapshot.key;
+        let value = childSnapshot.val();
+
+        data.push({
+          key: key,
+          value: value,
+        });
+      });
+      setData(data);
+      console.log(data);
+      setCountMale(data.filter((item) => item.value.gender === "1").length);
+      setCountFemale(data.filter((item) => item.value.gender !== "1").length);
+    });
+  };
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <>
       <div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          <div className="shadow p-10">hello</div>
-          <div className="shadow p-10">hello</div>
-          <div className="shadow p-10">hello</div>
-          <div className="shadow p-10">hello</div>
+          <div className="shadow p-10 text-center">
+            Jumlah Laki-laki <br /> {countMale}
+          </div>
+          <div className="shadow p-10 text-center">
+            Jumlah Perempuan <br /> {countFemale}
+          </div>
         </div>
         <div className="w-full mt-10 relative overflow-x-auto shadow-md sm:rounded-lg">
           <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -70,14 +77,14 @@ const DashboardPage = () => {
                   className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
                 >
                   <td className="px-6 py-4">{number + 1}</td>
-                  <td className="px-6 py-4">{item.name}</td>
-                  <td className="px-6 py-4">{item.age}</td>
+                  <td className="px-6 py-4">{item.value.name}</td>
+                  <td className="px-6 py-4">{item.value.age}</td>
                   <td className="px-6 py-4">
-                    {item.gender === 1 ? "Laki-laki" : "Perempuan"}{" "}
+                    {item.value.gender === "1" ? "Laki-laki" : "Perempuan"}{" "}
                   </td>
-                  <td className="px-6 py-4">{item.wrong}</td>
-                  <td className="px-6 py-4">{item.correct}</td>
-                  <td className="px-6 py-4">{item.score}</td>
+                  <td className="px-6 py-4">{5 - item.value.score}</td>
+                  <td className="px-6 py-4">{item.value.score}</td>
+                  <td className="px-6 py-4">{item.value.score * 20}</td>
                 </tr>
               ))}
             </tbody>

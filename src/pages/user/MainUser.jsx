@@ -331,7 +331,7 @@ const MainUser = () => {
                 to={`/quis/${name}/${age}/${gender}`}
                 className="button__primary mt-10 w-full text-center"
               >
-                submit
+                Mulai
               </Link>
             </form>
           </div>

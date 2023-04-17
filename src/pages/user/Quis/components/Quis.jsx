@@ -46,14 +46,14 @@ const Quis = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 w-full shadow">
       <h1 className="font-semibold">{Questions[currentQuestion].prompt}</h1>
       <div className="flex flex-col space-y-2 p-2">
         <button
           onClick={() => {
             chooseOption("optionA");
           }}
-          className="bg-red-500 text-justify p-2"
+          className="button__warn text-justify"
         >
           A. {Questions[currentQuestion].optionA}
         </button>
@@ -61,7 +61,7 @@ const Quis = () => {
           onClick={() => {
             chooseOption("optionB");
           }}
-          className="bg-red-500 text-justify p-2"
+          className="button__warn text-justify"
         >
           B. {Questions[currentQuestion].optionB}
         </button>
