@@ -2,6 +2,20 @@ import React, { useState, useEffect } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdOutlineClose } from "react-icons/md";
 import { Link } from "react-router-dom";
+import ResponseImage from "../../assets/images/response.jpg";
+import ShoutForHelpImage from "../../assets/images/shout_for_help.jpg";
+import CirculationOneImage from "../../assets/images/circulation_one.jpg";
+import CirculationTwoImage from "../../assets/images/circulation_two.jpg";
+import CirculationThreeImage from "../../assets/images/circulation_three.jpg";
+import CirculationFourImage from "../../assets/images/circulation_four.jpg";
+import HeadTiltChin from "../../assets/images/head_tilt-chin.jpg";
+import JawThrust from "../../assets/images/jaw_thrust.jpg";
+import BreathingImage from "../../assets/images/breathing.jpg";
+import RecoveryOne from "../../assets/images/recovery_one.jpg";
+import RecoveryTwo from "../../assets/images/recovery_two.jpg";
+import RecoveryThree from "../../assets/images/circulation_three.jpg";
+import RecoveryFour from "../../assets/images/recovery_four.jpg";
+import RecoveryFive from "../../assets/images/recovery_five.jpg";
 
 const MainUser = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
@@ -152,6 +166,9 @@ const MainUser = () => {
               <h3 className="font-semibold">
                 Memeriksa Respon Korban (Response)
               </h3>
+              <div className="flex items-center justify-center">
+                <img src={ResponseImage} alt="" className="w-[300px]" />
+              </div>
               <p>
                 Menepuk-nepuk bahu korban dengan pelan dan lembut agar mencegah
                 pergerakan yang berlebihan dan setelah itu berteriak memanggil
@@ -165,6 +182,9 @@ const MainUser = () => {
               <h3 className="font-semibold">
                 Panggil Bantuan (Shout For Help)
               </h3>
+              <div className="flex items-center justify-center">
+                <img src={ShoutForHelpImage} alt="" className="w-[300px]" />
+              </div>
               <p>
                 Jika korban tersebut terlihat tidak memberikan respon jika
                 dipanggil maka minta bantuan dengan segera berteriak minta
@@ -208,6 +228,20 @@ const MainUser = () => {
                     atas tangan pertama kemudian jari-jari tangan disatukan dan
                     mengunci.
                   </p>
+                  <div className="flex items-center justify-center">
+                    <img
+                      src={CirculationOneImage}
+                      alt=""
+                      className="w-[300px]"
+                    />
+                  </div>
+                  <div className="flex items-center justify-center mt-4">
+                    <img
+                      src={CirculationTwoImage}
+                      alt=""
+                      className="w-[300px]"
+                    />
+                  </div>
                 </li>
                 <li>
                   <p>
@@ -220,6 +254,20 @@ const MainUser = () => {
                     orang dewasa dengan perbandingan atau rasio yaitu 30
                     kompresi : 2 ventilasi (satu atau dua penolong).
                   </p>
+                  <div className="flex items-center justify-center">
+                    <img
+                      src={CirculationThreeImage}
+                      alt=""
+                      className="w-[300px]"
+                    />
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <img
+                      src={CirculationFourImage}
+                      alt=""
+                      className="w-[300px]"
+                    />
+                  </div>
                 </li>
               </ul>
             </div>
@@ -245,6 +293,9 @@ const MainUser = () => {
                   </p>
                   <ul>
                     <li>
+                      <div className="flex items-center justify-center">
+                        <img src={HeadTiltChin} alt="" className="w-[300px]" />
+                      </div>
                       <p>
                         Teknik Head Tilt : Satu tangan berada di dahi korban
                         lalu dorong dahi ke arah belakang sehingga kepala
@@ -254,6 +305,9 @@ const MainUser = () => {
                       </p>
                     </li>
                     <li>
+                      <div className="flex items-center justify-center">
+                        <img src={JawThrust} alt="" className="w-[300px]" />
+                      </div>
                       <p>
                         Teknik Jaw thrust teknik jaw thrust yaitu dengan cara
                         mengangkat dagu dengan kedua tangan agar rahang gigi
@@ -274,6 +328,9 @@ const MainUser = () => {
                 tidak ada nafas maka secepatnya memberikan bantuan nafas yaitu
                 sebanyak 10-12 kali/menit.
               </p>
+              <div className="flex items-center justify-center">
+                <img src={BreathingImage} alt="" className="w-[300px]" />
+              </div>
               <p>
                 Dengan cara : <br />
                 Mulut ke mulut yaitu teknik yang cepat dan tepat digunakan untuk
@@ -282,6 +339,101 @@ const MainUser = () => {
                 memperhatikan untuk menutup lubang hidung korban pada saat
                 menghembuskan nafas menggunakan jari-jari agar udara tidak akan
                 keluar kembali dari hidung korban.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold">Evaluasi</h3>
+              <p>
+                Sesudah dilakukan kompresi dan ventilasi 30 : 2 Selama 2 menit
+                lalu dilakukan evaluasi :
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    1. Jika nadi karotis tidak ada, maka penolong akan
+                    melanjutkan kembali pemberian kompresi dan ventilasi 30 : 2
+                    sampai 5 siklus.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    2. Jika nadi teraba tetapi tidak ada nafas, penolong
+                    melakukan pemberian bantuan nafas yaitu sebanyak 10 - 12
+                    kali per menit.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    3. Jika nafas ada dan nadi sudah ada tetapi korban tidak
+                    sadar, atur posisi korban berikan posisi pemulihan (recovery
+                    position) agar jalan nafas korban terbuka.
+                  </p>
+                </li>
+              </ul>
+              <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                <img src={RecoveryOne} alt="" className="w-[300px]" />
+                <img src={RecoveryTwo} alt="" className="w-[300px]" />
+                <img src={RecoveryThree} alt="" className="w-[300px]" />
+                <img src={RecoveryFour} alt="" className="w-[300px]" />
+                <img src={RecoveryFive} alt="" className="w-[300px]" />
+              </div>
+            </div>
+            <div>
+              <h3 className="font-semibold">Beberapa cara penangangan RJP</h3>
+              <ul>
+                <li>
+                  <p>
+                    1. penolong sudah memberikan bantuan dengan optimal
+                    mengalami kelelahan atau pada tempat kejadian petugas medis
+                    telah datang.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    2. Pada saat penanganan lanjutan penderita tidak berespon
+                    dengan minimal waktu 20 menit
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    3. Terdapat atau terlihat ada tanda kematian.
+                    <br />
+                    Tanda-tanda jika seseorang sudah mati secara biologis yaitu
+                    :
+                  </p>
+                  <ul>
+                    <li>
+                      <p>
+                        • kebiruan : Terlihat tanda merah tua sampai kebiruan
+                        pada bagian tubuh terbawa pada korban,
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        • kekakuan : Anggota tubuh dan pada batang tubuh korban
+                        kaku, mulai empat jam dan akan menghilang sekitar
+                        sepuluh jam{" "}
+                      </p>
+                    </li>
+                    <li>
+                      <p>• pembusukan/adanya bau busuk</p>
+                    </li>
+                    <li>
+                      <p>
+                        • terputusnya kepala akibat cidera yang terjadi tidak
+                        memungkinkan untuk hidup dan lain sebagainya.
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <p>
+                Menepuk-nepuk bahu korban dengan pelan dan lembut agar mencegah
+                pergerakan yang berlebihan dan setelah itu berteriak memanggil
+                korban “Bangun-bangun pak/ibu, apakah bapak/ibu dalam keadaan
+                baik-baik saja?” Apabila korban tidak bereaksi jika dipanggil
+                bisa memberikan rangsangan nyeri dengan menekan pada kuku
+                ataupun pada bagian dada korban.
               </p>
             </div>
           </article>
