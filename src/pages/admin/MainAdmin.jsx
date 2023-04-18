@@ -19,11 +19,11 @@ const MainAdmin = () => {
       icon: MdOutlineDashboard,
       isAdmin: true,
     },
-    {
-      name: "Data Pertanyaan",
-      link: "/pages/data-question",
-      icon: MdDescription,
-    },
+    // {
+    //   name: "Data Pertanyaan",
+    //   link: "/pages/data-question",
+    //   icon: MdDescription,
+    // },
   ];
   const [openModalLogout, setOpenModalLogout] = useState(false);
   const Logout = () => {
@@ -99,13 +99,13 @@ const MainAdmin = () => {
             <Routes>
               <Route path="/dashboard" element={<DashboardPage />} />
               {/* Criteria */}
-              <Route
+              {/* <Route
                 path="/detail-question/:id"
                 element={<DetailQuestionPage />}
               />
               <Route path="/add-question" element={<AddQuestionPage />} />
               <Route path="/data-question" element={<DataQuestionPage />} />
-              <Route path="/edit-question/:id" element={<EditQuetionPage />} />
+              <Route path="/edit-question/:id" element={<EditQuetionPage />} /> */}
             </Routes>
           </div>
         </div>
