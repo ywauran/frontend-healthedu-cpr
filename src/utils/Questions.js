@@ -13,7 +13,7 @@ export const Questions = [
     optionA: "Seseorang mengalami Patah tulang",
     optionB: "Seseorang mengalami Henti jantung dan Henti nafas",
     image: null,
-    asnwer: "optionA",
+    asnwer: "optionB",
   },
   {
     prompt: "3. Tujuan dari pemberian resusitasi jantung paru adalah?",
@@ -21,7 +21,7 @@ export const Questions = [
     optionB:
       "Pemberian bantuan untuk oksigen darurat untuk organ vital otak dan jantung dengan ventilasi buatan dan pemberian sirkulasi buatan.",
     image: null,
-    asnwer: "optionA",
+    asnwer: "optionB",
   },
   {
     prompt:
@@ -29,7 +29,7 @@ export const Questions = [
     optionA: "Danger, Respone, Circulation, Breathing, Shout for help, Airway",
     optionB: "Danger, Respone, Shout for help, Circulation, Airway, Breathing",
     image: null,
-    asnwer: "optionA",
+    asnwer: "optionB",
   },
   {
     prompt:
@@ -37,6 +37,6 @@ export const Questions = [
     optionA: "Memeriksa respon korban",
     optionB: "Pastikan keamanan 3A : Aman penolong, korban dan Lingkungan",
     image: null,
-    asnwer: "optionA",
+    asnwer: "optionB",
   },
 ];
