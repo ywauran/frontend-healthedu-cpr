@@ -24,9 +24,11 @@ const MainUser = () => {
   const [gender, setGender] = useState("1");
   return (
     <>
-      <header className="border-b-2 sticky top-0 z-50 bg-white">
+      <header className="border-b-2 shadow sticky py-2 top-0 z-50 bg-white">
         <div className="flex justify-between py-2 px-4">
-          <h1>Healthedu Cpr</h1>
+          <h1 className="text-blue-700 font-bold">
+            Healthedu <span className="text-blue-800">Cpr</span>
+          </h1>
           <nav className="hidden">
             <ul className="flex space-x-4">
               <li>Pengertian</li>
@@ -62,9 +64,9 @@ const MainUser = () => {
       </header>
       <main className="p-4 pb-8">
         <section className="p-2">
-          <h2 className="font-bold">Pengertian</h2>
+          <h2 className="font-bold text-center text-xl">Pengertian</h2>
           <article>
-            <p>
+            <p className="indent-10">
               Resusitasi jantung paru adalah suatu intervensi tindakan yang
               dilakukan sebagai usaha untuk mendapatkan kembali fungsi dari
               pernapasan dan fungsi sirkulasi yang normal pada seseorang akibat
@@ -76,15 +78,15 @@ const MainUser = () => {
           </article>
         </section>
         <section className="p-2">
-          <h2 className="font-bold">Tujuan</h2>
+          <h2 className="font-bold text-center text-xl">Tujuan</h2>
           <article>
-            <p>
+            <p className="indent-10">
               Pemberian bantuan untuk oksigen darurat yang diberikan dengan baik
               dan secara efektif untuk organ vital yaitu pada otak dan jantung
               dengan melakukan pemberian melalui ventilasi buatan agar dapat
               berfungsi secara baik dan untuk pemberian sirkulasi buatan.
             </p>
-            <p>
+            <p className="indent-10">
               Hal ini dilakukan agar dapat mencegah berhentinya fungsi sirkulasi
               darah atau fungsi pernafasan terhenti melakukan usaha yaitu
               pemberian kompresi dada dan ventilasi yang benar dan tepat pada
@@ -92,12 +94,13 @@ const MainUser = () => {
             </p>
           </article>
         </section>
+        {/* Indikasi yaitu Henti Jantung dan Henti Nafas */}
         <section className="p-2">
-          <h2 className="font-bold">
+          <h2 className="font-bold text-center text-xl py-4">
             Indikasi yaitu Henti Jantung dan Henti Nafas
           </h2>
-          <ul type="">
-            <li>
+          <ul className="grid gap-y-4 grid-cols-1 md:grid-cols-2  gap-x-10 mt-4">
+            <li className="shadow p-4">
               <p>
                 1. Henti jantung berarti keadaan dimana pada peredaraan darah
                 normal secara tiba-tiba terganggu dengan tidak adanya tekanan
@@ -106,7 +109,7 @@ const MainUser = () => {
                 berhentinya sirkulasi yang normal.
               </p>
             </li>
-            <li>
+            <li className="shadow p-4">
               <p>
                 2. Henti nafas adalah suatu kejadian ketika seseorang terhenti
                 fungsi pernafasan atau tidak efektif dalam bernafas, dapat
@@ -121,49 +124,55 @@ const MainUser = () => {
             </li>
           </ul>
         </section>
+        {/* Penanganan */}
         <section className="p-2">
-          <h2 className="font-bold">Penanganan</h2>
+          <h2 className="font-bold text-xl text-center">Penanganan</h2>
           <article>
             <div className="criteria">
-              <ul>
-                <li>
+              <ul className="grid gap-y-4 md:grid-cols-3 md:gap-4">
+                <li className="shadow p-3">
                   <p>1. Memastikan Keamanan</p>
                 </li>
-                <li>
+                <li className="shadow p-3">
                   <p>2. Memeriksa Respon</p>
                 </li>
-                <li>
+                <li className="shadow p-3">
                   <p>3. Panggil Bantuan</p>
                 </li>
-                <li>
+                <li className="shadow p-3">
                   <p>4. Sirkulasi</p>
                 </li>
-                <li>
+                <li className="shadow p-3">
                   <p>5. Periksa Jalan Nafas</p>
                 </li>
-                <li>
+                <li className="shadow p-3">
                   <p>6. Pernafasan</p>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold">Memastikan Kemanan (Danger)</h3>
-              <h4>3A</h4>
-              <ul>
+              <h3 className="font-semibold text-center text-xl">
+                Memastikan Kemanan (Danger)
+              </h3>
+              <h4 className="font-bold text-center">3A</h4>
+              <ul className="text-justify">
                 <li>
-                  Aman Penolong, menggunakan alat pelindung diri dan menjadi
-                  suatu prioritas agar terhindar menjadi korban berikutnya.{" "}
+                  <span className="font-semibold">Aman Penolong</span>,
+                  menggunakan alat pelindung diri dan menjadi suatu prioritas
+                  agar terhindar menjadi korban berikutnya.{" "}
                 </li>
                 <li>
-                  Aman Pasien/Korban, mengamankan korban ke tempat yang aman,
+                  <span className="font-semibold">Aman Pasien/Korban</span>,
+                  mengamankan korban ke tempat yang aman,
                 </li>
                 <li>
-                  Aman Lingkungan, memperhatikan situasi dan keadaan sekitar
+                  <span className="font-semibold">Aman Lingkungan</span>,
+                  memperhatikan situasi dan keadaan sekitar
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold">
+              <h3 className="font-semibold text-center text-xl">
                 Memeriksa Respon Korban (Response)
               </h3>
               <div className="flex items-center justify-center">
@@ -179,7 +188,7 @@ const MainUser = () => {
               </p>
             </div>
             <div>
-              <h3 className="font-semibold">
+              <h3 className="font-semibold text-center text-xl">
                 Panggil Bantuan (Shout For Help)
               </h3>
               <div className="flex items-center justify-center">
@@ -193,7 +202,9 @@ const MainUser = () => {
               </p>
             </div>
             <div>
-              <h3 className="font-semibold">Sirkulasi (Circulation)</h3>
+              <h3 className="font-semibold text-xl text-center">
+                Sirkulasi (Circulation)
+              </h3>
               <ul>
                 <li>
                   <p>
@@ -272,7 +283,9 @@ const MainUser = () => {
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold">Periksa Jalan Nafas (Airway)</h3>
+              <h3 className="font-semibold text-center text-xl">
+                Periksa Jalan Nafas (Airway)
+              </h3>
               <ul>
                 <li>
                   <p>
@@ -320,7 +333,9 @@ const MainUser = () => {
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold">Pernafasan (Breathing)</h3>
+              <h3 className="font-semibold text-center text-xl">
+                Pernafasan (Breathing)
+              </h3>
               <p>
                 Bantuan nafas memberikan 2 kali hembusan. Tiap 1 kali hembusan
                 dengan waktu 5 detik – 6 detik dan sampai terlihat ada
@@ -342,27 +357,27 @@ const MainUser = () => {
               </p>
             </div>
             <div>
-              <h3 className="font-semibold">Evaluasi</h3>
+              <h3 className="font-semibold text-center text-xl">Evaluasi</h3>
               <p>
                 Sesudah dilakukan kompresi dan ventilasi 30 : 2 Selama 2 menit
                 lalu dilakukan evaluasi :
               </p>
-              <ul>
-                <li>
+              <ul className="grid gap-y-3">
+                <li className="shadow p-3">
                   <p>
                     1. Jika nadi karotis tidak ada, maka penolong akan
                     melanjutkan kembali pemberian kompresi dan ventilasi 30 : 2
                     sampai 5 siklus.
                   </p>
                 </li>
-                <li>
+                <li className="shadow p-3">
                   <p>
                     2. Jika nadi teraba tetapi tidak ada nafas, penolong
                     melakukan pemberian bantuan nafas yaitu sebanyak 10 - 12
                     kali per menit.
                   </p>
                 </li>
-                <li>
+                <li className="shadow p-3">
                   <p>
                     3. Jika nafas ada dan nadi sudah ada tetapi korban tidak
                     sadar, atur posisi korban berikan posisi pemulihan (recovery
@@ -379,22 +394,24 @@ const MainUser = () => {
               </div>
             </div>
             <div>
-              <h3 className="font-semibold">Beberapa cara penangangan RJP</h3>
-              <ul>
-                <li>
+              <h3 className="font-semibold text-center text-xl">
+                Beberapa cara penangangan RJP
+              </h3>
+              <ul className="grid gap-4">
+                <li className="shadow p-3">
                   <p>
                     1. penolong sudah memberikan bantuan dengan optimal
                     mengalami kelelahan atau pada tempat kejadian petugas medis
                     telah datang.
                   </p>
                 </li>
-                <li>
+                <li className="shadow p-3">
                   <p>
                     2. Pada saat penanganan lanjutan penderita tidak berespon
                     dengan minimal waktu 20 menit
                   </p>
                 </li>
-                <li>
+                <li className="shadow p-3">
                   <p>
                     3. Terdapat atau terlihat ada tanda kematian.
                     <br />
@@ -427,14 +444,6 @@ const MainUser = () => {
                   </ul>
                 </li>
               </ul>
-              <p>
-                Menepuk-nepuk bahu korban dengan pelan dan lembut agar mencegah
-                pergerakan yang berlebihan dan setelah itu berteriak memanggil
-                korban “Bangun-bangun pak/ibu, apakah bapak/ibu dalam keadaan
-                baik-baik saja?” Apabila korban tidak bereaksi jika dipanggil
-                bisa memberikan rangsangan nyeri dengan menekan pada kuku
-                ataupun pada bagian dada korban.
-              </p>
             </div>
           </article>
         </section>

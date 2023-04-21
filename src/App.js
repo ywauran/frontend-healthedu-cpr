@@ -4,6 +4,7 @@ import LoginPage from "./pages/LoginPage";
 import MainAdmin from "./pages/admin/MainAdmin";
 import MainUser from "./pages/user/MainUser";
 import Quis from "./pages/user/Quis/Quis";
+import "@fontsource/poppins";
 const App = () => {
   return (
     <div className="app">
