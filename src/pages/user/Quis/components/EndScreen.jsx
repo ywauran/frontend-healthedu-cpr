@@ -19,9 +19,8 @@ const EndScreen = () => {
     <div className="flex flex-col justify-center items-center shadow-lg p-4">
       <h2 className="font-semibold">Quiz Finished</h2>
       <h3 className="font-medium">{name}</h3>
-      <p>
-        {score} / {Questions.length}
-      </p>
+      <p>{score} Benar</p>
+      <p>{20 - score} Salah</p>
       <button onClick={restartQuiz} className="button__third">
         Kembali Ke Halaman Utama
       </button>

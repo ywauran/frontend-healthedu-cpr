@@ -136,7 +136,7 @@ const MainUser = () => {
         </section>
         {/* Penanganan */}
         <section className="p-2">
-          <h2 className="font-bold text-xl text-center">Penanganan</h2>
+          <h2 className="font-bold text-xl text-center">Langkah-langkah</h2>
           <article>
             <div className="criteria">
               <ul className="grid gap-y-4 md:grid-cols-3 md:gap-4">
@@ -404,7 +404,6 @@ const MainUser = () => {
                 </li>
               </ul>
               <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
-                <img src={RecoveryOne} alt="" className="w-[300px]" />
                 <img src={RecoveryTwo} alt="" className="w-[300px]" />
                 <img src={RecoveryThree} alt="" className="w-[300px]" />
                 <img src={RecoveryFour} alt="" className="w-[300px]" />
@@ -413,7 +412,7 @@ const MainUser = () => {
             </div>
             <div>
               <h3 className="font-semibold text-center text-xl">
-                Beberapa cara penangangan RJP
+                Penanganan RJP dapat dihentikan bila:
               </h3>
               <ul className="grid gap-4">
                 <li className="shadow p-3">
