@@ -37,6 +37,11 @@ const Quis = () => {
     setCurrentQuestion(currentQuestion + 1);
   };
 
+  const prevQuestion = () => {
+    setScore(score - 1);
+    setCurrentQuestion(currentQuestion - 1);
+  };
+
   const finishQuiz = (event) => {
     if (Questions[currentQuestion].asnwer === optionChosen) {
       setScore(score + 1);
@@ -47,7 +52,26 @@ const Quis = () => {
 
   return (
     <div className="p-4 w-full shadow">
-      <h1 className="font-semibold">{Questions[currentQuestion].prompt}</h1>
+      <h1 className="font-semibold text-center">
+        {Questions[currentQuestion].prompt}
+      </h1>
+      {Questions[currentQuestion].image !== null ? (
+        <>
+          <div
+            className={`grid place-content-center ${
+              Questions[currentQuestion].image.length > 1
+                ? "grid-cols-3"
+                : "grid-cols-1"
+            } place-items-center gap-4`}
+          >
+            {Questions[currentQuestion].image !== null
+              ? Questions[currentQuestion].image.map((item) => (
+                  <img src={item} alt="" className="w-[100px]  shadow p-1" />
+                ))
+              : null}
+          </div>
+        </>
+      ) : null}
       <div className="flex flex-col space-y-2 p-2">
         <button
           onClick={() => {
@@ -69,17 +93,34 @@ const Quis = () => {
 
       <div className="flex justify-center items-center">
         {currentQuestion === Questions.length - 1 ? (
-          <button onClick={(e) => finishQuiz(e)} id="nextQuestion">
-            Finish Quiz
+          <button
+            onClick={(e) => finishQuiz(e)}
+            id="nextQuestion"
+            className="button__primary"
+          >
+            Selesai
           </button>
         ) : (
-          <button
-            onClick={nextQuestion}
-            id="nextQuestion"
-            className="button__secondary"
-          >
-            Next Question
-          </button>
+          <div>
+            {currentQuestion === 0 ? null : (
+              <>
+                <button
+                  onClick={prevQuestion}
+                  id="nextQuestion"
+                  className="button__secondary"
+                >
+                  Sebelumnya
+                </button>
+              </>
+            )}
+            <button
+              onClick={nextQuestion}
+              id="nextQuestion"
+              className="button__primary"
+            >
+              Selanjutnya
+            </button>
+          </div>
         )}
       </div>
     </div>

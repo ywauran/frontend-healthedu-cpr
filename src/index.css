@@ -34,8 +34,12 @@ p {
   @apply text-justify p-2;
 }
 
-h2,
-h3,
-h4 {
-  @apply my-3;
+.main h2,
+.main h3,
+.main h4 {
+  @apply my-3 text-green-500;
+}
+
+.hero {
+  background-image: url("./assets/images/hero.jpg");
 }

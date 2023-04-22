@@ -16,9 +16,9 @@ const EndScreen = () => {
     navigate("/");
   };
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center shadow-lg p-4">
       <h2 className="font-semibold">Quiz Finished</h2>
-      <h3>{name}</h3>
+      <h3 className="font-medium">{name}</h3>
       <p>
         {score} / {Questions.length}
       </p>

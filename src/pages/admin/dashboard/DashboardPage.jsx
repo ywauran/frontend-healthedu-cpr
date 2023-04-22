@@ -82,9 +82,9 @@ const DashboardPage = () => {
                   <td className="px-6 py-4">
                     {item.value.gender === "1" ? "Laki-laki" : "Perempuan"}{" "}
                   </td>
-                  <td className="px-6 py-4">{5 - item.value.score}</td>
+                  <td className="px-6 py-4">{20 - item.value.score}</td>
                   <td className="px-6 py-4">{item.value.score}</td>
-                  <td className="px-6 py-4">{item.value.score * 20}</td>
+                  <td className="px-6 py-4">{item.value.score * 5}</td>
                 </tr>
               ))}
             </tbody>

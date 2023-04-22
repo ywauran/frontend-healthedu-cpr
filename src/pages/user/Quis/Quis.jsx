@@ -12,23 +12,25 @@ const Quis = () => {
   const { name, age, gender } = useParams();
 
   return (
-    <div className="grid place-content-center place-items-center">
-      <h1 className="font-bold">Quiz App</h1>
-      <GameStateContext.Provider
-        value={{
-          gameState,
-          setGameState,
-          name,
-          age,
-          gender,
-          score,
-          setScore,
-        }}
-      >
-        {gameState === "menu" && <Menu />}
-        {gameState === "playing" && <QuisComponents />}
-        {gameState === "finished" && <EndScreen />}
-      </GameStateContext.Provider>
+    <div className="p-4 rounded-md">
+      <div className="grid place-content-center place-items-center h-screen">
+        <h1 className="font-bold my-4">Quiz App</h1>
+        <GameStateContext.Provider
+          value={{
+            gameState,
+            setGameState,
+            name,
+            age,
+            gender,
+            score,
+            setScore,
+          }}
+        >
+          {gameState === "menu" && <Menu />}
+          {gameState === "playing" && <QuisComponents />}
+          {gameState === "finished" && <EndScreen />}
+        </GameStateContext.Provider>
+      </div>
     </div>
   );
 };

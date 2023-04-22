@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdOutlineClose } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ResponseImage from "../../assets/images/response.jpg";
 import ShoutForHelpImage from "../../assets/images/shout_for_help.jpg";
 import CirculationOneImage from "../../assets/images/circulation_one.jpg";
@@ -22,6 +22,15 @@ const MainUser = () => {
   const [name, setName] = useState("");
   const [age, setAge] = useState(0);
   const [gender, setGender] = useState("1");
+  const [error, setError] = useState(false);
+  let navigate = useNavigate();
+  const validation = () => {
+    if (name.length === 0 || age <= 15) {
+      setError(true);
+    } else {
+      navigate(`/quis/${name}/${age}/${gender}`);
+    }
+  };
   return (
     <>
       <header className="border-b-2 shadow sticky py-2 top-0 z-50 bg-white">
@@ -62,7 +71,7 @@ const MainUser = () => {
           </button>
         </div>
       </header>
-      <main className="p-4 pb-8">
+      <main className="main p-4 pb-8">
         <section className="p-2">
           <h2 className="font-bold text-center text-xl">Pengertian</h2>
           <article>
@@ -102,24 +111,25 @@ const MainUser = () => {
           <ul className="grid gap-y-4 grid-cols-1 md:grid-cols-2  gap-x-10 mt-4">
             <li className="shadow p-4">
               <p>
-                1. Henti jantung berarti keadaan dimana pada peredaraan darah
-                normal secara tiba-tiba terganggu dengan tidak adanya tekanan
-                darah arteri. Yang terjadi penghentian secara mendadak pada
-                aktivitas pemompaan yang efektif sehiingga mengakibatkan
-                berhentinya sirkulasi yang normal.
+                1. <span className="font-semibold">Henti jantung</span> berarti
+                keadaan dimana pada peredaraan darah normal secara tiba-tiba
+                terganggu dengan tidak adanya tekanan darah arteri. Yang terjadi
+                penghentian secara mendadak pada aktivitas pemompaan yang
+                efektif sehiingga mengakibatkan berhentinya sirkulasi yang
+                normal.
               </p>
             </li>
             <li className="shadow p-4">
               <p>
-                2. Henti nafas adalah suatu kejadian ketika seseorang terhenti
-                fungsi pernafasan atau tidak efektif dalam bernafas, dapat
-                terjadi secara bersamaan dengan kejadian henti jantung namun
-                sistem pernafasan tidak selalu berhenti jika jantung tidak
-                berfungsi dengan baik, jika pada sistem saraf dan otot tidak
-                menunjang pada pernafasan maka seseorang akan mengalami keadaan
-                henti nafas. Henti nafas dapat dikenali dengan tidak ada terjadi
-                pengembangan dada dan tidak ada aliran udara pada pernafasan
-                dari korban
+                2. <span className="font-semibold">Henti nafas</span> adalah
+                suatu kejadian ketika seseorang terhenti fungsi pernafasan atau
+                tidak efektif dalam bernafas, dapat terjadi secara bersamaan
+                dengan kejadian henti jantung namun sistem pernafasan tidak
+                selalu berhenti jika jantung tidak berfungsi dengan baik, jika
+                pada sistem saraf dan otot tidak menunjang pada pernafasan maka
+                seseorang akan mengalami keadaan henti nafas. Henti nafas dapat
+                dikenali dengan tidak ada terjadi pengembangan dada dan tidak
+                ada aliran udara pada pernafasan dari korban
               </p>
             </li>
           </ul>
@@ -150,6 +160,7 @@ const MainUser = () => {
                 </li>
               </ul>
             </div>
+            {/* Memastikan Kemanan (Danger) */}
             <div>
               <h3 className="font-semibold text-center text-xl">
                 Memastikan Kemanan (Danger)
@@ -171,6 +182,7 @@ const MainUser = () => {
                 </li>
               </ul>
             </div>
+            {/* Memeriksa Respon Korban (Response) */}
             <div>
               <h3 className="font-semibold text-center text-xl">
                 Memeriksa Respon Korban (Response)
@@ -178,7 +190,7 @@ const MainUser = () => {
               <div className="flex items-center justify-center">
                 <img src={ResponseImage} alt="" className="w-[300px]" />
               </div>
-              <p>
+              <p className="indent-10">
                 Menepuk-nepuk bahu korban dengan pelan dan lembut agar mencegah
                 pergerakan yang berlebihan dan setelah itu berteriak memanggil
                 korban “Bangun-bangun pak/ibu, apakah bapak/ibu dalam keadaan
@@ -187,6 +199,7 @@ const MainUser = () => {
                 ataupun pada bagian dada korban.
               </p>
             </div>
+            {/* Panggil Bantuan (Shout For Help) */}
             <div>
               <h3 className="font-semibold text-center text-xl">
                 Panggil Bantuan (Shout For Help)
@@ -194,20 +207,21 @@ const MainUser = () => {
               <div className="flex items-center justify-center">
                 <img src={ShoutForHelpImage} alt="" className="w-[300px]" />
               </div>
-              <p>
+              <p className="indent-10">
                 Jika korban tersebut terlihat tidak memberikan respon jika
                 dipanggil maka minta bantuan dengan segera berteriak minta
                 tolong dan segera mengaktifkan sistem gawat darurat atau EMS
                 119.
               </p>
             </div>
+            {/* Sirkulasi (Circulation) */}
             <div>
               <h3 className="font-semibold text-xl text-center">
                 Sirkulasi (Circulation)
               </h3>
               <ul>
                 <li>
-                  <p>
+                  <p className="indent-10">
                     Mengecek nadi yaitu dengan memeriksa ada atau tidaknya nadi
                     korban menentukannya dilakukan cara yaitu : Meraba arteri
                     karotis pada daerah leher korban menggunakan dua jari tangan
@@ -220,19 +234,19 @@ const MainUser = () => {
                   </p>
                 </li>
                 <li>
-                  <p>
+                  <p className="indent-10">
                     Posisi korban dalam keadaan supinasi/terlentang pada tempat
                     yang datar ataupun keras.
                   </p>
                 </li>
                 <li>
-                  <p>
+                  <p className="indent-10">
                     Posisi penolong berlutut senyaman mungkin sejajar dengan
                     bahu korban di samping korban.
                   </p>
                 </li>
                 <li>
-                  <p>
+                  <p className="indent-10">
                     Penolong meletakkan dengan salah satu tumit telapak tangan
                     pada seperdua di bagian bawah sternum atau pada pertengahan
                     dada korban dan tumit telapak tangan lainnya berada pada
@@ -255,7 +269,7 @@ const MainUser = () => {
                   </div>
                 </li>
                 <li>
-                  <p>
+                  <p className="indent-10">
                     Pemberian kompresi yang meliputi posisi lengan penolong
                     tegak lurus dengan penekanan dada kuat dengan kedalaman
                     (minimum 2inch/5cm) dan kecepatan kompresi yaitu 100-120
@@ -282,13 +296,14 @@ const MainUser = () => {
                 </li>
               </ul>
             </div>
+            {/* Periksa Jalan Nafas (Airway) */}
             <div>
               <h3 className="font-semibold text-center text-xl">
                 Periksa Jalan Nafas (Airway)
               </h3>
               <ul>
                 <li>
-                  <p>
+                  <p className="indent-10">
                     Membersihkan jalan nafas dengan cross finger, finger swab
                     jika terdapat benda asing : Buka mulut korban dengan cara
                     jari silang (Cross finger) ibu jari yang diletakkan di mulut
@@ -298,7 +313,7 @@ const MainUser = () => {
                   </p>
                 </li>
                 <li>
-                  <p>
+                  <p className="indent-10">
                     Membuka jalan nafas yang harus dipastikan tidak adanya
                     sumbatan benda asing dilakukan teknik Head tilt-Chin lift
                     dan dilakukan Jaw thrust jika dicurigai mengalami trauma
@@ -310,11 +325,11 @@ const MainUser = () => {
                         <img src={HeadTiltChin} alt="" className="w-[300px]" />
                       </div>
                       <p>
-                        Teknik Head Tilt : Satu tangan berada di dahi korban
-                        lalu dorong dahi ke arah belakang sehingga kepala
-                        menengadah dan pada mulut korban dengan keadaan sedikit
-                        terbuka dan teknik chin lift yaitu mengangkat dagu
-                        korban.
+                        <span className="font-semibold">Teknik Head Tilt</span>{" "}
+                        : Satu tangan berada di dahi korban lalu dorong dahi ke
+                        arah belakang sehingga kepala menengadah dan pada mulut
+                        korban dengan keadaan sedikit terbuka dan teknik chin
+                        lift yaitu mengangkat dagu korban.
                       </p>
                     </li>
                     <li>
@@ -322,8 +337,8 @@ const MainUser = () => {
                         <img src={JawThrust} alt="" className="w-[300px]" />
                       </div>
                       <p>
-                        Teknik Jaw thrust teknik jaw thrust yaitu dengan cara
-                        mengangkat dagu dengan kedua tangan agar rahang gigi
+                        <span className="font-semibold">Teknik Jaw thrust</span>{" "}
+                        : mengangkat dagu dengan kedua tangan agar rahang gigi
                         bawah akan berada ke arah lebih depan dari pada rahang
                         gigi yang atas.
                       </p>
@@ -332,11 +347,12 @@ const MainUser = () => {
                 </li>
               </ul>
             </div>
+            {/* Pernafasan (Breathing) */}
             <div>
               <h3 className="font-semibold text-center text-xl">
                 Pernafasan (Breathing)
               </h3>
-              <p>
+              <p className="indent-20">
                 Bantuan nafas memberikan 2 kali hembusan. Tiap 1 kali hembusan
                 dengan waktu 5 detik – 6 detik dan sampai terlihat ada
                 pengembangan dada pada korban. Apabila nadi ada tetapi korban
@@ -346,8 +362,9 @@ const MainUser = () => {
               <div className="flex items-center justify-center">
                 <img src={BreathingImage} alt="" className="w-[300px]" />
               </div>
-              <p>
-                Dengan cara : <br />
+              <p>Dengan cara :</p>
+              <p className="indent-10">
+                {" "}
                 Mulut ke mulut yaitu teknik yang cepat dan tepat digunakan untuk
                 pemberian udara ke paru-paru korban. Menutup seluruh bagian
                 mulut korban sehingga tidak akan terjadi kebocoran, juga harus
@@ -356,9 +373,10 @@ const MainUser = () => {
                 keluar kembali dari hidung korban.
               </p>
             </div>
+            {/* Evaluasi */}
             <div>
               <h3 className="font-semibold text-center text-xl">Evaluasi</h3>
-              <p>
+              <p className="indent-10">
                 Sesudah dilakukan kompresi dan ventilasi 30 : 2 Selama 2 menit
                 lalu dilakukan evaluasi :
               </p>
@@ -450,7 +468,7 @@ const MainUser = () => {
         <section className="quiz">
           <h2 className="font-bold">Kuis</h2>
           <div>
-            <form className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-4">
               <div>
                 <label htmlFor="" className="label__input">
                   Nama
@@ -488,13 +506,16 @@ const MainUser = () => {
                   <option value="2">Perempuan</option>
                 </select>
               </div>
-              <Link
-                to={`/quis/${name}/${age}/${gender}`}
+              <div className={`${error ? "block" : "hidden"} text-red-600`}>
+                <p>Anda belum mengisi nama dan umur</p>
+              </div>
+              <button
+                onClick={() => validation()}
                 className="button__primary mt-10 w-full text-center"
               >
                 Mulai
-              </Link>
-            </form>
+              </button>
+            </div>
           </div>
         </section>
       </main>
