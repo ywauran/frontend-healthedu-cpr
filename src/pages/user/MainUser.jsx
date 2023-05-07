@@ -409,11 +409,12 @@ const MainUser = () => {
                   <p></p>
                 </div>
                 <div>
-                  <img src={RecoveryFour} alt="" className="w-[300px]" />
-                </div>
-                <div>
                   <img src={RecoveryThree} alt="" className="w-[300px]" />
                 </div>
+                <div>
+                  <img src={RecoveryFour} alt="" className="w-[300px]" />
+                </div>
+
                 <div>
                   <img src={RecoveryFive} alt="" className="w-[300px]" />
                 </div>

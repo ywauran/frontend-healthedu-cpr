@@ -135,7 +135,7 @@ export const Questions = [
       "16. Pada gambar dibawah ini dilakukan jika nadi dan nafas sudah ada tetapi korban tidak sadar disebut posisi?",
     optionA: "Posisi supinasi/terlentang",
     optionB: "Posisi pemulihan/recovery position",
-    image: [RecoveryTwo, RecoveryFour, RecoveryThree, RecoveryFive],
+    image: [RecoveryTwo, RecoveryThree, RecoveryFour, RecoveryFive],
     asnwer: "optionB",
   },
   {
