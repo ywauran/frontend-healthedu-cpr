@@ -1,9 +1,10 @@
 import HeadTiltChin from "../assets/images/head_tilt-chin.jpg";
 import RecoveryOne from "../assets/images/recovery_one.jpg";
 import RecoveryTwo from "../assets/images/recovery_two.jpg";
-import RecoveryThree from "../assets/images/circulation_three.jpg";
+import RecoveryThree from "../assets/images/recovery_three.jpg";
 import RecoveryFour from "../assets/images/recovery_four.jpg";
 import RecoveryFive from "../assets/images/recovery_five.jpg";
+import Recovery from "../assets/images/r.jpg";
 
 export const Questions = [
   {
@@ -131,16 +132,10 @@ export const Questions = [
   },
   {
     prompt:
-      "16. Pada gambar di atas dilakukan jika nadi dan nafas sudah ada tetapi korban tidak sadar disebut posisi?",
+      "16. Pada gambar dibawah ini dilakukan jika nadi dan nafas sudah ada tetapi korban tidak sadar disebut posisi?",
     optionA: "Posisi supinasi/terlentang",
     optionB: "Posisi pemulihan/recovery position",
-    image: [
-      RecoveryOne,
-      RecoveryTwo,
-      RecoveryThree,
-      RecoveryFour,
-      RecoveryFive,
-    ],
+    image: [RecoveryTwo, RecoveryFour, RecoveryThree, RecoveryFive],
     asnwer: "optionB",
   },
   {

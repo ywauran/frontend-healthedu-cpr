@@ -13,7 +13,7 @@ import JawThrust from "../../assets/images/jaw_thrust.jpg";
 import BreathingImage from "../../assets/images/breathing.jpg";
 import RecoveryOne from "../../assets/images/recovery_one.jpg";
 import RecoveryTwo from "../../assets/images/recovery_two.jpg";
-import RecoveryThree from "../../assets/images/circulation_three.jpg";
+import RecoveryThree from "../../assets/images/recovery_three.jpg";
 import RecoveryFour from "../../assets/images/recovery_four.jpg";
 import RecoveryFive from "../../assets/images/recovery_five.jpg";
 
@@ -25,7 +25,7 @@ const MainUser = () => {
   const [error, setError] = useState(false);
   let navigate = useNavigate();
   const validation = () => {
-    if (name.length === 0 || age <= 15) {
+    if (name.length === 0 || age <= 8) {
       setError(true);
     } else {
       navigate(`/quis/${name}/${age}/${gender}`);
@@ -404,10 +404,24 @@ const MainUser = () => {
                 </li>
               </ul>
               <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
-                <img src={RecoveryTwo} alt="" className="w-[300px]" />
-                <img src={RecoveryThree} alt="" className="w-[300px]" />
-                <img src={RecoveryFour} alt="" className="w-[300px]" />
-                <img src={RecoveryFive} alt="" className="w-[300px]" />
+                <div>
+                  <img src={RecoveryTwo} alt="" className="w-[300px]" />
+                  <p></p>
+                </div>
+                <div>
+                  <img src={RecoveryFour} alt="" className="w-[300px]" />
+                </div>
+                <div>
+                  <img src={RecoveryThree} alt="" className="w-[300px]" />
+                </div>
+                <div>
+                  <img src={RecoveryFive} alt="" className="w-[300px]" />
+                </div>
+              </div>
+              <div className="mt-2 flex justify-center">
+                <p className="font-semibold">
+                  Recovery Position/Posisi Pemulihan/Posisi Miring Mantap
+                </p>
               </div>
             </div>
             <div>
