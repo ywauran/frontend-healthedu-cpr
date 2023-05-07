@@ -420,7 +420,7 @@ const MainUser = () => {
                 </div>
               </div>
               <div className="mt-2 flex justify-center">
-                <p className="font-semibold">
+                <p className="font-semibold text-center">
                   Recovery Position/Posisi Pemulihan/Posisi Miring Mantap
                 </p>
               </div>
